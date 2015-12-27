@@ -17,5 +17,6 @@ RUN mv composer.phar /usr/local/bin/composer
 
 #BOX
 RUN composer global require "kherge/box=^2.6"
-ADD build.sh /build
-RUN chmod +x /build
+ADD build.sh /usr/bin/buildphar
+RUN chmod +x /usr/bin/buildphar
+RUN echo "phar.readonly=Off" >> /usr/local/etc/php/php.ini
